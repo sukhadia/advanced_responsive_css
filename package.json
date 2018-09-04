@@ -1,0 +1,25 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Advanced CSS Demo",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "start": "concurrently -n 'sass,server' -c 'bgBlue.bold,bgGreen.bold' 'npm run compile:sass' 'live-server'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sukhadia/advanced_responsive_css.git"
+  },
+  "author": "Neel Sukhadia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sukhadia/advanced_responsive_css/issues"
+  },
+  "homepage": "https://github.com/sukhadia/advanced_responsive_css#readme",
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "node-sass": "^4.9.3"
+  },
+  "dependencies": {}
+}
