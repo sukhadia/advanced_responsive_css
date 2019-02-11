@@ -27,11 +27,20 @@
     transform: translate(-50%, -50%) scale(.25); // translate repeated here (inspite of the mixin absCenter because otherwise it's not applied as the 
                                                 // class ends up having 2 transforms (which is not allowed).
     transition: all .5s .2s;
+
+    @include respond(tab-port) {
+      display: block;
+    }
   }
 
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @include respond(tab-port) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -39,12 +48,21 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(tab-port) {
+      display: block;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+    
 
+    @include respond(phone) {
+      float: left;
+      width: 50%;
+    }
   }
 
   &__text {
@@ -52,14 +70,23 @@
     margin-bottom: 4rem;
 
     //NOTE in prodution, browser prefixes can be added by using tools such as auto-prefixer.
-
     -moz-column-count: 2;
     -moz-column-gap: 4rem;
     -moz-column-rule: 1px solid $color-gray-light-2;
-
+    
     column-count: 2;
     column-gap: 4rem;
     column-rule: 1px solid $color-gray-light-2;
+
+    @include respond(tab-port) {
+      -moz-column-count: 1;
+      -moz-column-gap: none;
+      -moz-column-rule: none;
+      
+      column-count: 1;
+      column-gap: none;
+      column-rule: none;
+    }
 
     -moz-hyphens: auto;
     -ms-hyphens: auto;
@@ -84,6 +111,18 @@
       text-decoration: none;
       display: inline-block;
       transition: all .2s;
+      
+      @include respond(tab-port) {
+        top: 7rem;
+        font-size: 7rem;
+        color: $color-white;
+      }
+
+      @include respond(phone) {
+        top: 3.5rem;
+        font-size: 4rem;
+        color: $color-white;
+      }
     }
 
     &:hover {
